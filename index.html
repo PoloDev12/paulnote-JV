@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Paulnote – Calcul de moyenne</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="data:image/png;base64,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" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Paulnote" />
+  <meta name="theme-color" content="#1b5e20" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    :root { --bg: #e8f5e9; --card: #ffffff; --text: #000000; --green: #1b5e20; --soft: #f1f8f4; }
+    body.dark { --bg: #121212; --card: #1e1e1e; --text: #ffffff; --green: #2e7d32; --soft: #2a2a2a; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: linear-gradient(180deg, var(--bg), var(--card)); padding: 20px; color: var(--text); transition: 0.3s; }
+    .topbar { display: flex; align-items: center; gap: 15px; background: var(--green); color: white; padding: 15px 20px; border-radius: 12px; margin-bottom: 20px; }
+    .menu-btn { font-size: 22px; cursor: pointer; }
+    .logo { font-size: 22px; font-weight: 700; letter-spacing: 2px; }
+    .slogan { font-size: 13px; opacity: 0.9; margin-left: auto; }
+    .side-menu { position: fixed; top: 20px; left: -260px; width: 240px; background: var(--card); padding: 15px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: left 0.3s ease; z-index: 1000; }
+    .side-menu.open { left: 20px; }
+    .side-menu button { width: 100%; margin-bottom: 10px; padding: 8px; border: none; border-radius: 8px; background: var(--soft); cursor: pointer; font-weight: 600; color: var(--text); }
+    .container { max-width: 520px; margin: auto; background: var(--card); padding: 20px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.25); border-top: 8px solid var(--green); }
+    .hidden { display: none; }
+    .matiere { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; padding: 8px 10px; border-radius: 8px; background: var(--soft); }
+    input[type=number] { width: 80px; background: transparent; color: var(--text); }
+    button.main { width: 100%; margin-top: 15px; padding: 10px; background: var(--green); color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }
+    .checkbox { display: flex; align-items: center; margin-bottom: 8px; }
+    .checkbox input { margin-right: 8px; }
+    .history-item { padding: 10px; margin-bottom: 10px; background: var(--soft); border-radius: 8px; display: flex; justify-content: space-between; }
+    #paul-bubble { position: fixed; bottom: 24px; right: 24px; z-index: 2000; height: 44px; padding: 0 18px; border-radius: 22px; background: var(--green); color: white; font-size: 14px; font-weight: 700; letter-spacing: 0.5px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,0.35); transition: transform 0.2s; user-select: none; }
+    #paul-bubble:hover { transform: scale(1.05); }
+    #paul-chat { position: fixed; bottom: 82px; right: 24px; z-index: 2000; width: 340px; background: var(--card); border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); display: flex; flex-direction: column; overflow: hidden; transition: opacity 0.25s, transform 0.25s; max-height: 520px; }
+    #paul-chat.hidden { opacity: 0; pointer-events: none; transform: translateY(12px); }
+    .paul-header { background: var(--green); color: white; padding: 13px 16px; display: flex; align-items: center; gap: 10px; }
+    .paul-header .paul-name { font-weight: 700; font-size: 16px; }
+    .paul-header .paul-status { font-size: 11px; opacity: 0.85; }
+    .paul-header .paul-close { margin-left: auto; cursor: pointer; font-size: 18px; opacity: 0.8; }
+    #paul-messages { flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 8px; min-height: 220px; max-height: 340px; }
+    .msg { max-width: 84%; padding: 9px 13px; border-radius: 14px; font-size: 14px; line-height: 1.5; }
+    .msg.ai { background: var(--soft); color: var(--text); align-self: flex-start; border-bottom-left-radius: 4px; }
+    .msg.user { background: var(--green); color: white; align-self: flex-end; border-bottom-right-radius: 4px; }
+    .paul-suggestions { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 12px; }
+    .paul-suggestions button { font-size: 11px; padding: 5px 10px; border-radius: 20px; border: 1.5px solid var(--green); background: transparent; color: var(--green); cursor: pointer; transition: 0.2s; }
+    .paul-suggestions button:hover { background: var(--green); color: white; }
+    .paul-input-row { display: flex; gap: 8px; padding: 10px 12px; border-top: 1px solid var(--soft); }
+    .paul-input-row input { flex: 1; padding: 8px 12px; border-radius: 20px; border: 1.5px solid var(--soft); background: var(--soft); color: var(--text); font-size: 13px; outline: none; }
+    .paul-input-row input:focus { border-color: var(--green); }
+    .paul-input-row button { width: 36px; height: 36px; border-radius: 50%; background: var(--green); color: white; border: none; font-size: 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <div class="logo">PAULNOTE</div>
+  <div class="slogan">Ta moyenne générale, simplement.</div>
+</header>
+
+<div class="side-menu" id="sideMenu">
+  <h3>Menu</h3>
+  <button onclick="showHome()">🏠 Maison</button>
+  <button onclick="showSettings()">⚙️ Matières</button>
+  <button onclick="showHistory()">📈 Progression</button>
+  <button onclick="toggleDarkMode()">🌙 Mode sombre</button>
+  <button onclick="openPaul()">✨ Paul AI</button>
+</div>
+
+<div class="container" id="home"></div>
+<div class="container hidden" id="settings">
+  <h2>Choisis tes matières</h2>
+  <div id="matieres-checkbox"></div>
+  <button class="main" onclick="appliquerMatieres()">Appliquer</button>
+</div>
+<div class="container hidden" id="history">
+  <h2>Progression des moyennes</h2>
+  <div id="history-list"></div>
+</div>
+
+<div id="paul-bubble" onclick="togglePaul()">Paul AI</div>
+
+<div id="paul-chat" class="hidden">
+  <div class="paul-header">
+    <div>
+      <div class="paul-name">Paul AI</div>
+      <div class="paul-status">Toujours là pour t'aider</div>
+    </div>
+    <div class="paul-close" onclick="togglePaul()">✕</div>
+  </div>
+  <div id="paul-messages"></div>
+  <div class="paul-suggestions" id="paul-suggestions">
+    <button onclick="sendSuggestion('aide moi en maths')">➗ Maths</button>
+    <button onclick="sendSuggestion('aide moi en francais')">✍️ Français</button>
+    <button onclick="sendSuggestion('aide moi en histoire')">📜 Histoire</button>
+    <button onclick="sendSuggestion('aide moi en svt')">🔬 SVT</button>
+    <button onclick="sendSuggestion('aide moi en physique chimie')">⚗️ Physique</button>
+    <button onclick="sendSuggestion('motive moi')">💪 Motivation</button>
+    <button onclick="sendSuggestion('on discute')">💬 Discuter</button>
+    <button onclick="sendSuggestion('raconte moi une blague')">😄 Blague</button>
+  </div>
+  <div class="paul-input-row">
+    <input type="text" id="paul-input" placeholder="Écris à Paul AI…" onkeydown="if(event.key==='Enter') sendMessage()" />
+    <button onclick="sendMessage()">➤</button>
+  </div>
+</div>
+
+<script>
+  const sideMenu = document.getElementById('sideMenu');
+  const home = document.getElementById('home');
+  const settings = document.getElementById('settings');
+  const historyPage = document.getElementById('history');
+  const toutesMatieres = ['Maths','Français','Histoire-Géo','Anglais écrit','Anglais oral','Espagnol écrit','Espagnol oral','Allemand écrit','Allemand oral','SVT','Physique-Chimie','Technologie','EPS','Arts plastiques','Musique','Latin'];
+  let matieresActives = JSON.parse(localStorage.getItem('matieres')) || toutesMatieres;
+  let historique = JSON.parse(localStorage.getItem('historique')) || [];
+  if(localStorage.getItem('darkMode') === 'true') document.body.classList.add('dark');
+
+  function toggleMenu(){ sideMenu.classList.toggle('open'); }
+  function hideAll(){ home.classList.add('hidden'); settings.classList.add('hidden'); historyPage.classList.add('hidden'); }
+  function showHome(){ hideAll(); home.classList.remove('hidden'); toggleMenu(); }
+  function showSettings(){ hideAll(); settings.classList.remove('hidden'); toggleMenu(); renderSettings(); }
+  function showHistory(){ hideAll(); historyPage.classList.remove('hidden'); renderHistory(); toggleMenu(); }
+  function toggleDarkMode(){ document.body.classList.toggle('dark'); localStorage.setItem('darkMode', document.body.classList.contains('dark')); }
+  function renderHome(){
+    home.innerHTML = '';
+    matieresActives.forEach(m => home.innerHTML += `<div class="matiere"><span>${m}</span><input type="number" step="0.01" min="0" max="20"></div>`);
+    home.innerHTML += `<button class="main" onclick="calculerMoyenne()">Valider</button><div id="resultat"></div>`;
+  }
+  function renderSettings(){
+    const box = document.getElementById('matieres-checkbox'); box.innerHTML='';
+    toutesMatieres.forEach(m => box.innerHTML += `<div class="checkbox"><input type="checkbox" ${matieresActives.includes(m)?'checked':''} value="${m}"> ${m}</div>`);
+  }
+  function appliquerMatieres(){
+    const checks = document.querySelectorAll('#matieres-checkbox input');
+    matieresActives = [...checks].filter(c=>c.checked).map(c=>c.value);
+    localStorage.setItem('matieres', JSON.stringify(matieresActives));
+    renderHome(); showHome();
+  }
+  function calculerMoyenne(){
+    const inputs = document.querySelectorAll('#home input');
+    let total=0,count=0;
+    inputs.forEach(i=>{const v=parseFloat(i.value); if(!isNaN(v)){total+=v;count++;}});
+    if(!count){ document.getElementById('resultat').textContent='Entre au moins une note 😅'; return; }
+    const moyenne=(total/count).toFixed(2);
+    document.getElementById('resultat').textContent=`Moyenne générale : ${moyenne} / 20`;
+    historique.push({date:new Date().toLocaleDateString(),moyenne});
+    localStorage.setItem('historique', JSON.stringify(historique));
+  }
+  function renderHistory(){
+    const list=document.getElementById('history-list');
+    list.innerHTML = historique.length ? '' : '<p>Aucune moyenne enregistrée.</p>';
+    historique.forEach(h=> list.innerHTML += `<div class="history-item"><span>${h.date}</span><strong>${h.moyenne} / 20</strong></div>`);
+  }
+
+  // ══════════════════════════════════════
+  //   PAUL AI — BASE DE CONNAISSANCES
+  // ══════════════════════════════════════
+  const paulDB = [
+
+    // ── SALUTATIONS ──
+    { keys: ['salut','bonjour','hello','coucou','hey','bonsoir','yo','hi','wsh','wesh'], rep: [
+      "Salut ! Super content de te voir ! Je suis Paul AI, ton assistant scolaire et ton pote virtuel. Tu veux qu'on bosse sur un devoir, que je t'explique un cours, ou juste qu'on discute ? Dis-moi tout !",
+      "Hey ! Je suis là, prêt à tout. Que ce soit pour les maths, le français, l'histoire, ou juste pour passer le temps — je suis dispo. Qu'est-ce qu'on fait ?",
+      "Bonjour ! Belle journée pour apprendre des trucs ou procrastiner en me parlant 😄. Je suis là pour les deux ! C'est quoi l'objectif aujourd'hui ?",
+      "Coucou ! Alors, grosse journée de cours ? Devoir urgent ? Ou juste envie de parler ? Je suis là pour tout ça.",
+      "Wesh ! Quoi de neuf ? Je suis Paul AI — je peux t'aider sur tes devoirs, t'expliquer n'importe quel truc scolaire, ou simplement discuter. À toi de choisir !"
+    ]},
+
+    // ── COMMENT CA VA ──
+    { keys: ['comment tu vas','ca va','comment vas','tu vas bien','la forme','quoi de neuf'], rep: [
+      "Je vais super bien, merci de demander ! En tant qu'IA je suis toujours au top, mais toi ? T'as l'air comment aujourd'hui ? Des galères à l'école ou tout roule ?",
+      "Nickel ! Je suis toujours frais et dispo pour toi. Et toi, t'as passé une bonne journée ? Des cours sympas ou une journée à survivre ? 😄",
+      "En pleine forme ! C'est sympa de prendre des nouvelles. Toi par contre, dis-moi — t'as des devoirs qui t'attendent ou t'es en mode détente ce soir ?",
+      "Toujours au top ! Je suis une IA donc pas de mauvaise journée possible 😄. Toi en revanche, ça se passe comment ? T'as besoin d'aide sur quelque chose ?"
+    ]},
+
+    // ── QUI ES-TU ──
+    { keys: ['qui es tu','tu es qui','t es qui','ton nom','c est quoi paul','paul ai c est quoi','tu es une ia','t es une ia'], rep: [
+      "Je suis Paul AI, l'assistant intégré dans Paulnote ! Mon rôle c'est d'être là pour toi : t'aider sur tes devoirs (toutes les matières), répondre à tes questions scolaires, te motiver quand t'en as besoin, et discuter de tout et de rien comme un ami. Je suis 100% offline, donc pas besoin d'internet pour me parler !",
+      "Paul AI, c'est moi ! L'assistant de Paulnote. Je suis spécialisé dans les matières scolaires — maths, français, histoire, sciences, langues — mais je peux aussi parler jeux vidéo, musique, sport, films... Bref, je suis là pour tout. Pose-moi n'importe quelle question, je fais de mon mieux !"
+    ]},
+
+    // ── MOTIVATION ──
+    { keys: ['motive','motivation','encourage','je suis nul','j y arrive pas','j arrive pas','trop dur','trop difficile','j en peux plus','ras le bol','flemme','pas envie','decourage','je comprends rien','rien compris'], rep: [
+      "Stop ! Respire une seconde. Le fait que tu trouves ça dur, ça ne veut PAS dire que t'es nul. Ça veut dire que tu travailles sur quelque chose qui te challenge. Et c'est exactement là que ton cerveau progresse le plus. Les gens qui ne font jamais d'efforts ne progressent jamais. Toi, tu es en train de construire quelque chose. Qu'est-ce qui bloque exactement ? Explique-moi et on attaque ça ensemble, étape par étape.",
+      "Écoute, j'entends que t'es à bout. C'est normal de craquer parfois — l'école c'est intense. Mais sérieusement, t'as déjà surmonté des trucs difficiles avant, et tu t'en souviens même plus tellement c'est derrière toi. Là c'est juste une étape de plus. Prends 5 minutes de pause, bois quelque chose, et reviens. Je serai là et on attaque ça calmement. Sur quoi tu bloques ?",
+      "Tu sais ce que je remarque chez les gens qui réussissent ? Ce n'est pas qu'ils trouvent tout facile — c'est qu'ils continuent même quand c'est dur. Et là, t'es en train de faire exactement ça en cherchant de l'aide plutôt que d'abandonner. C'est déjà énorme. Dis-moi ce qui te pose problème et on le règle ensemble.",
+      "La flemme c'est humain, on a tous ça ! Mais voilà une astuce qui marche vraiment : dis-toi juste 'je travaille 10 minutes, pas plus'. Souvent, une fois lancé, t'arrêtes plus. Le plus dur c'est de démarrer. Alors, on commence par quoi ? Je suis là.",
+      "Rappelle-toi pourquoi tu fais tout ça. Les efforts d'aujourd'hui, c'est les options de demain. Et même si c'est dur maintenant, chaque chose que tu apprends, personne ne pourra te l'enlever. T'es plus fort que tu ne le crois. Qu'est-ce qu'on attaque ?"
+    ]},
+
+    // ── CONSEILS NOTES ──
+    { keys: ['bonnes notes','ameliorer','meilleure moyenne','mieux travailler','comment reviser','methode de travail','comment bosser','travailler mieux','conseil','progresser'], rep: [
+      "Pour vraiment améliorer tes notes, voici ce qui marche scientifiquement :\n\n📅 1. LA RÉGULARITÉ avant tout : 20 min par jour vaut 100 fois mieux que 3h la veille. Ton cerveau a besoin de répétitions espacées pour retenir.\n\n📝 2. LES FICHES : après chaque cours, fais une fiche d'une page max avec les idées essentielles. Ça t'oblige à comprendre avant de résumer.\n\n🎯 3. LA PRATIQUE ACTIVE : ne relis pas passivement — fais des exercices, pose-toi des questions, récite à voix haute. C'est ça qui grave en mémoire.\n\n🔍 4. CIBle tes points faibles : une heure sur ce que tu ne maîtrises pas = 5 heures sur ce que tu sais déjà.\n\n😴 5. LE SOMMEIL : pendant le sommeil, ton cerveau trie et consolide les souvenirs. Dormir 8h après avoir révisé = mémorisation boostée.\n\n❓ 6. POSE DES QUESTIONS : à ton prof, à moi, à n'importe qui. Ne reste jamais bloqué en silence.",
+      "La vraie clé des bonnes notes c'est la méthode, pas le temps passé. Voici ce que font les bons élèves :\n\n• Ils assistent au cours en étant vraiment attentifs (pas de téléphone, ils prennent des notes).\n• Ils relisent leurs notes le soir même — 10 minutes suffisent pour tout ancrer.\n• Ils font les exercices AVANT de regarder les corrections.\n• Ils demandent de l'aide dès qu'ils ne comprennent pas, sans attendre.\n• Ils dorment bien et bougent régulièrement.\n\nAucun de ces trucs n'est sorcier. C'est juste de la régularité. Quel est ton point faible là-dedans ?"
+    ]},
+
+    // ── MATHS GÉNÉRAL ──
+    { keys: ['aide moi en maths','les maths','mathematiques','math','calcul','exercice de maths'], rep: [
+      "Les maths, j'adore ça ! C'est une matière où tout se construit logiquement — une fois que tu comprends le principe, les exercices deviennent presque mécaniques. Sur quoi tu travailles exactement ?\n\n➗ Fractions et opérations ?\n🔢 Équations et inéquations ?\n📐 Géométrie (périmètres, aires, volumes) ?\n📏 Théorème de Pythagore ou Thalès ?\n📊 Statistiques et probabilités ?\n💯 Pourcentages ?\n📈 Fonctions et graphiques ?\n\nDis-moi le chapitre ou colle-moi l'exercice directement !",
+      "Top, les maths ! C'est la matière où les progrès sont les plus rapides quand on a la bonne méthode. Dis-moi sur quoi tu galères — équations, géométrie, fractions, probabilités — et je t'explique avec des exemples concrets étape par étape."
+    ]},
+
+    // ── FRACTIONS ──
+    { keys: ['fraction','diviser des fractions','multiplier des fractions','additionner des fractions','soustraire des fractions'], rep: [
+      "Les fractions — tout ce qu'il faut savoir :\n\n➕ ADDITION / SOUSTRACTION :\nIl faut OBLIGATOIREMENT le même dénominateur.\nEx : 1/3 + 1/6 → on réduit au même dénominateur (6) → 2/6 + 1/6 = 3/6 = 1/2\nAstuce : pour trouver le dénominateur commun, cherche le PPCM (plus petit commun multiple).\n\n✖️ MULTIPLICATION :\nOn multiplie numérateur × numérateur ET dénominateur × dénominateur. Simple !\nEx : 2/3 × 3/4 = (2×3)/(3×4) = 6/12 = 1/2\nConseils : simplifie avant de multiplier si possible → 2/3 × 3/4 = (2×1)/(1×4) = 2/4 = 1/2\n\n➗ DIVISION :\nOn multiplie par l'inverse du diviseur.\nEx : 2/3 ÷ 4/5 = 2/3 × 5/4 = 10/12 = 5/6\n\n✅ SIMPLIFICATION :\nDivise numérateur et dénominateur par leur PGCD.\nEx : 12/18 → PGCD(12,18)=6 → 2/3\n\nDonne-moi un exercice et je le fais avec toi !"
+    ]},
+
+    // ── EQUATIONS ──
+    { keys: ['equation','equations','resoudre','trouver x','inconnue','x =','inequation'], rep: [
+      "Les équations — la méthode complète :\n\n🎯 PRINCIPE FONDAMENTAL : ce qu'on fait d'un côté, on le fait de l'autre. L'objectif = isoler x.\n\n📝 ÉQUATION DU 1er DEGRÉ :\nEx : 3x + 5 = 20\n→ Soustrait 5 des deux côtés : 3x = 15\n→ Divise par 3 des deux côtés : x = 5\n✅ Vérification : 3×5 + 5 = 20 ✓\n\n📝 ÉQUATION AVEC x DES DEUX CÔTÉS :\nEx : 2x + 3 = x + 7\n→ Soustrait x des deux côtés : x + 3 = 7\n→ Soustrait 3 : x = 4\n\n📝 ÉQUATION DU 2ème DEGRÉ (ax² + bx + c = 0) :\n→ Calcule le discriminant : Δ = b² - 4ac\n→ Si Δ > 0 : deux solutions x = (-b ± √Δ) / 2a\n→ Si Δ = 0 : une solution x = -b / 2a\n→ Si Δ < 0 : pas de solution réelle\n\n📝 INÉQUATIONS : même méthode mais attention — si tu multiplies ou divises par un nombre NÉGATIF, le sens de l'inégalité s'inverse !\n\nDonne-moi ton équation !"
+    ]},
+
+    // ── POURCENTAGES ──
+    { keys: ['pourcentage','pourcent','% de','calcul de pourcentage'], rep: [
+      "Les pourcentages — tout le programme :\n\n💡 CALCUL DE BASE :\n• x% d'un nombre N = N × x/100\nEx : 30% de 250 = 250 × 30/100 = 75\n\n💡 QUEL POURCENTAGE REPRÉSENTE A PAR RAPPORT À B :\n= (A ÷ B) × 100\nEx : 45 sur 180 = (45/180) × 100 = 25%\n\n💡 AUGMENTATION DE x% :\n= multiplier par (1 + x/100)\nEx : prix de 200€ augmenté de 15% = 200 × 1,15 = 230€\n\n💡 RÉDUCTION / SOLDE DE x% :\n= multiplier par (1 - x/100)\nEx : article à 80€ avec -25% = 80 × 0,75 = 60€\n\n💡 TROUVER LE PRIX INITIAL après remise :\nSi tu connais le prix réduit et le % de remise :\nPrix initial = Prix réduit ÷ (1 - x/100)\nEx : après -20%, tu paies 64€ → prix initial = 64 ÷ 0,80 = 80€\n\n💡 AUGMENTATIONS SUCCESSIVES :\n+10% puis +10% ≠ +20% ! → × 1,10 × 1,10 = × 1,21 = +21%\n\nDonne-moi ton exercice !"
+    ]},
+
+    // ── PYTHAGORE ──
+    { keys: ['pythagore','theoreme de pythagore','hypotenuse','triangle rectangle'], rep: [
+      "Le théorème de Pythagore — tout ce qu'il faut savoir :\n\n📐 LE THÉORÈME :\nDans un triangle rectangle, le carré de l'hypoténuse = somme des carrés des deux autres côtés.\na² + b² = c²\n(c = hypoténuse = côté en face de l'angle droit, toujours le plus long)\n\n📐 POUR TROUVER CHAQUE CÔTÉ :\n• c = √(a² + b²)\n• a = √(c² - b²)\n• b = √(c² - a²)\n\n📐 TRIPLETS PYTHAGORICIENS CLASSIQUES (à connaître par cœur !) :\n• 3, 4, 5 → 9 + 16 = 25 ✓\n• 5, 12, 13 → 25 + 144 = 169 ✓\n• 8, 15, 17 → 64 + 225 = 289 ✓\n\n📐 LA RÉCIPROQUE (pour prouver qu'un triangle est rectangle) :\nSi a² + b² = c², alors le triangle EST rectangle en C.\n\n📐 EXEMPLE :\nTriangle avec a=6, b=8. Trouver c.\nc² = 36 + 64 = 100 → c = √100 = 10 ✓\n\nDonne-moi les mesures de ton triangle !"
+    ]},
+
+    // ── THALES ──
+    { keys: ['thales','theoreme de thales','proportionnalite','droites paralleles'], rep: [
+      "Le théorème de Thalès :\n\n📐 ÉNONCÉ : Si deux droites sont coupées par des parallèles, alors les rapports des segments sont égaux.\n\nSi (DE) ∥ (BC) dans un triangle ABC avec D sur AB et E sur AC :\nAD/AB = AE/AC = DE/BC\n\n📐 UTILISATION PRATIQUE :\nSi tu connais 3 des 4 valeurs, tu peux trouver la 4ème par produit en croix.\n\nEx : AD=3, AB=9, AE=4. Trouver AC.\n3/9 = 4/AC → AC = (4×9)/3 = 12\n\n📐 RÉCIPROQUE : si AD/AB = AE/AC, alors (DE) ∥ (BC).\n\n⚠️ Piège classique : vérifie toujours que les points sont dans le bon ordre !\n\nDonne-moi ton exercice !"
+    ]},
+
+    // ── GÉOMÉTRIE ──
+    { keys: ['perimetre','aire','surface','volume','geometrie','cercle','carre','rectangle','triangle','parallelogramme','losange','trapeze'], rep: [
+      "Toutes les formules de géométrie :\n\n📐 PÉRIMÈTRES :\n• Carré : 4c\n• Rectangle : 2(L+l)\n• Triangle : a+b+c\n• Cercle (circonférence) : 2πr\n• Losange : 4c\n• Trapèze : a+b+c+d\n\n📏 AIRES :\n• Carré : c²\n• Rectangle : L×l\n• Triangle : (b×h)/2\n• Cercle : πr²\n• Parallélogramme : b×h\n• Losange : (D×d)/2 (diagonales)\n• Trapèze : ((a+b)×h)/2\n\n📦 VOLUMES :\n• Cube : c³\n• Pavé (boîte) : L×l×h\n• Cylindre : πr²×h\n• Cône : (1/3)×πr²×h\n• Sphère : (4/3)×πr³\n• Pyramide : (1/3)×Aire base×h\n\nDis-moi quelle figure tu calcules et donne-moi les mesures !"
+    ]},
+
+    // ── PROBABILITÉS ──
+    { keys: ['probabilite','probabilites','chance','hasard','lancer de de','tirage','pile ou face'], rep: [
+      "Les probabilités — cours complet :\n\n🎲 FORMULE DE BASE :\nP(événement) = nombre de cas favorables / nombre de cas possibles\n\n🎲 EXEMPLES CLASSIQUES :\n• Dé à 6 faces, P(obtenir 4) = 1/6 ≈ 16,7%\n• Pile ou face, P(pile) = 1/2 = 50%\n• Tirage d'une carte rouge dans un jeu de 52 = 26/52 = 1/2\n\n🎲 RÈGLES FONDAMENTALES :\n• P est toujours entre 0 (impossible) et 1 (certain)\n• P(contraire de A) = 1 - P(A)\nEx : P(ne pas tirer un 6) = 1 - 1/6 = 5/6\n\n🎲 ÉVÉNEMENTS INCOMPATIBLES (ne peuvent pas se produire en même temps) :\nP(A ou B) = P(A) + P(B)\nEx : P(1 ou 2) sur un dé = 1/6 + 1/6 = 2/6 = 1/3\n\n🎲 ÉVÉNEMENTS INDÉPENDANTS :\nP(A et B) = P(A) × P(B)\nEx : P(pile ET pile) = 1/2 × 1/2 = 1/4\n\n🎲 ARBRE DE PROBABILITÉ : utile pour les tirages successifs — chaque branche représente une issue, le produit des probabilités donne P de ce chemin.\n\nDonne-moi ton exercice !"
+    ]},
+
+    // ── STATISTIQUES ──
+    { keys: ['statistique','statistiques','mediane','mode','ecart type','diagramme','tableau de donnees'], rep: [
+      "Les statistiques — tout le programme :\n\n📊 INDICATEURS DE POSITION :\n• Moyenne : somme ÷ effectif total\n• Médiane : valeur du milieu après tri (si effectif pair : moyenne des deux du milieu)\n• Mode : valeur la plus fréquente\n\n📊 INDICATEURS DE DISPERSION :\n• Étendue : valeur max − valeur min\n• Variance : moyenne des carrés des écarts à la moyenne\n• Écart-type : √variance (plus il est grand, plus les données sont dispersées)\n\n📊 EXEMPLE complet avec 3, 7, 7, 8, 10, 15 :\n• Moyenne = (3+7+7+8+10+15)/6 = 50/6 ≈ 8,33\n• Médiane = (7+8)/2 = 7,5 (entre les 3e et 4e valeurs)\n• Mode = 7\n• Étendue = 15-3 = 12\n\n📊 FRÉQUENCE RELATIVE = (effectif de la classe) / (effectif total) × 100\n\n📊 DIAGRAMMES :\n• En barres : données discrètes\n• Histogramme : données continues\n• Circulaire (camembert) : proportions\n\nDonne-moi tes données !"
+    ]},
+
+    // ── FONCTIONS ──
+    { keys: ['fonction','fonctions','f(x)','courbe','graphique','tableau de valeurs','affine','lineaire','parabole'], rep: [
+      "Les fonctions — l'essentiel :\n\n📈 FONCTION LINÉAIRE : f(x) = ax\n→ Droite passant par l'origine. a = coefficient directeur (pente).\nEx : f(x) = 3x → pour x=2, f(2)=6\n\n📈 FONCTION AFFINE : f(x) = ax + b\n→ Droite quelconque. a = pente, b = ordonnée à l'origine.\nEx : f(x) = 2x + 1 → pour x=3, f(3)=7\n\n📈 SENS DE VARIATION :\n• Si a > 0 : fonction croissante\n• Si a < 0 : fonction décroissante\n• Si a = 0 : fonction constante\n\n📈 FONCTION CARRÉ : f(x) = x²\n→ Parabole. Minimum en x=0. Décroissante sur ]-∞;0], croissante sur [0;+∞[\n\n📈 TABLEAU DE VALEURS :\nChoisis des valeurs de x, calcule f(x), place les points, relie.\n\n📈 INTERSECTION avec l'axe x (racines) : résoudre f(x) = 0\n📈 INTERSECTION avec l'axe y : calculer f(0)\n\nDonne-moi ta fonction !"
+    ]},
+
+    // ── FRANÇAIS GÉNÉRAL ──
+    { keys: ['aide moi en francais','les francais','redaction','dissertation','texte','ecriture','francais'], rep: [
+      "Le français ! C'est la matière où la méthode et le vocabulaire font TOUT. Dis-moi ce dont tu as besoin :\n\n✍️ Rédaction / histoire à écrire ?\n📝 Dissertation (pour/contre) ?\n🔍 Commentaire de texte ?\n📖 Résumé d'un texte ?\n🔤 Grammaire / orthographe / conjugaison ?\n🎭 Figures de style ?\n📚 Explication d'une œuvre ?\n\nDis-moi le sujet précis et je t'aide du début à la fin !",
+      "Français ! Ma matière préférée pour les méthodes. Que tu aies une rédaction à écrire, une règle de grammaire qui te résiste, ou un texte à analyser — je suis là. Dis-moi exactement ce dont tu as besoin."
+    ]},
+
+    // ── RÉDACTION ──
+    { keys: ['rediger','redaction','raconter une histoire','ecrire une histoire','recit','conte','nouvelle'], rep: [
+      "Pour écrire une rédaction qui impressionne, voici la méthode complète :\n\n📝 INTRODUCTION (environ 10% du texte) :\n• Commence par une phrase d'accroche (une question, une description, une action).\n• Présente le cadre : lieu, époque, personnages principaux.\n• Crée une situation initiale claire.\n\n📖 DÉVELOPPEMENT (environ 80% du texte) :\n• Élément perturbateur : quelque chose qui brise l'équilibre initial.\n• Péripéties : les aventures, obstacles, rebondissements.\n• Point culminant : le moment le plus intense.\n• Utilise des connecteurs : d'abord, ensuite, soudain, alors, enfin...\n• Décris les émotions des personnages — ça rend le texte vivant.\n• Varie les longueurs de phrases : courtes pour l'action, longues pour les descriptions.\n\n🏁 CONCLUSION (environ 10%) :\n• Résolution : comment le problème se règle.\n• Situation finale : l'équilibre retrouvé (ou non, selon l'effet voulu).\n• Chute : une dernière phrase mémorable.\n\n✨ ASTUCES :\n• Évite de commencer trop de phrases par 'Il' ou 'Elle'.\n• Utilise des synonymes pour éviter les répétitions.\n• Lis à voix haute pour repérer les maladresses.\n\nDonne-moi ton sujet et je t'aide à construire le plan !"
+    ]},
+
+    // ── DISSERTATION ──
+    { keys: ['dissertation','plan dissertation','argumentation','these','antithese','debat'], rep: [
+      "La dissertation — méthode complète :\n\n📌 INTRODUCTION :\n• Amorce : partir d'un fait, d'une citation, d'un exemple concret.\n• Définir les termes du sujet.\n• Montrer l'enjeu, le problème posé.\n• Annoncer le plan clairement.\n\n1️⃣ THÈSE (1ère partie — pour) :\n• Idée directrice de la partie.\n• Argument 1 + exemple précis et développé.\n• Argument 2 + exemple précis.\n• Argument 3 si besoin.\n• Mini-conclusion de la partie.\n\n2️⃣ ANTITHÈSE (2ème partie — contre ou nuance) :\n• Montre les limites de la thèse.\n• Même structure : arguments + exemples.\n\n3️⃣ SYNTHÈSE / DÉPASSEMENT (3ème partie) :\n• Ne te contente pas de dire 'les deux ont raison'.\n• Propose une vision plus nuancée, un nouveau point de vue.\n• C'est la partie la plus difficile mais la plus valorisée.\n\n📌 CONCLUSION :\n• Bilan de ton raisonnement en 2-3 phrases.\n• Ouverture : une question plus large qui prolonge le débat.\n\n⚠️ PIÈGES À ÉVITER :\n• Ne jamais utiliser 'je' en dissertation.\n• Toujours illustrer chaque argument par un exemple.\n• Transition entre les parties obligatoire.\n\nDonne-moi le sujet et je construis le plan avec toi !"
+    ]},
+
+    // ── GRAMMAIRE ──
+    { keys: ['grammaire','accord','orthographe','conjugaison','participe passe','subjonctif','accord du verbe','nature','fonction'], rep: [
+      "Grammaire — les règles les plus importantes :\n\n✅ ACCORD DU PARTICIPE PASSÉ :\n• Avec être : s'accorde en genre et nombre avec le SUJET.\nEx : Elles sont parties. / Il est arrivé.\n• Avec avoir : s'accorde avec le COD seulement si le COD est AVANT le verbe.\nEx : La chanson qu'il a chantée. (COD 'que' = 'chanson' = féminin, avant le verbe)\nEx : Il a chanté une chanson. (COD après = pas d'accord)\n\n✅ ACCORD SUJET-VERBE :\n• Toujours identifier le sujet avant d'accorder.\n• Attention aux sujets inversés : 'Arrivent les vacances.' → sujet = vacances.\n• Collectif + complément : 'Une foule de gens est venue.' (accord avec le noyau)\n\n✅ SUBJONCTIF — quand l'utiliser :\n• Après 'que' + verbe de volonté, de sentiment, de doute.\nEx : Je veux que tu viennes. / Il faut que tu fasses tes devoirs.\n• Conjonctions : bien que, pour que, avant que, à moins que...\n\n✅ TOUT/TOUS/TOUTE/TOUTES :\n• Adjectif (avant un nom) : tout s'accorde → toute la classe, tous les élèves.\n• Adverbe (avant un adjectif) : invariable en principe → il est tout rouge.\nException : devant féminin commençant par consonne → elle est toute rouge.\n\nQuelle règle te bloque ?"
+    ]},
+
+    // ── FIGURES DE STYLE ──
+    { keys: ['figure de style','metaphore','comparaison','hyperbole','personnification','anaphore','antithese','oxymore'], rep: [
+      "Les figures de style — cours complet :\n\n🔵 COMPARAISON : rapproche deux éléments avec un outil (comme, tel que, semblable à).\nEx : Il est fort comme un bœuf.\n\n🔴 MÉTAPHORE : comparaison SANS outil de comparaison.\nEx : C'est un lion au combat. / La vie est un long fleuve tranquille.\n\n🟡 HYPERBOLE : exagération pour amplifier un effet.\nEx : Je t'ai dit mille fois de ranger ! / Je meurs de soif.\n\n🟢 PERSONNIFICATION : attribuer des caractéristiques humaines à une chose.\nEx : Le vent chantait. / La forêt respirait.\n\n🟣 ANAPHORE : répétition d'un mot/groupe en début de vers ou phrase.\nEx : 'Il faut... Il faut... Il faut...' → insistance forte.\n\n⚪ ALLITÉRATION : répétition de sons consonantiques.\nEx : Pour qui sont ces serpents qui sifflent sur vos têtes ?\n\n🩷 ASSONANCE : répétition de sons vocaliques.\nEx : Les sanglots longs des violons de l'automne.\n\n🟠 ANTITHÈSE : opposition de deux idées dans la même phrase.\nEx : Partir c'est mourir un peu. / Il était petit mais grand d'âme.\n\n🔶 OXYMORE : réunion de deux mots contradictoires.\nEx : Un silence assourdissant. / Cette obscure clarté.\n\n🔷 EUPHÉMISME : atténuer une réalité dure.\nEx : Il a disparu (= il est mort). / Malvoyant (= aveugle).\n\nTu veux analyser un texte ?"
+    ]},
+
+    // ── COMMENTAIRE DE TEXTE ──
+    { keys: ['commentaire de texte','analyser un texte','analyse litteraire','commentaire compose'], rep: [
+      "Méthode du commentaire de texte — version complète :\n\n📖 INTRODUCTION :\n• Présentation de l'auteur, de l'œuvre, du contexte historique/littéraire.\n• Nature du texte (roman, poème, théâtre, essai) et genre (comique, tragique, réaliste...).\n• Résumé très bref du passage (2 phrases max).\n• PROBLÉMATIQUE : une question centrale à laquelle ton commentaire répondra.\n• Annonce du plan en 2 ou 3 axes.\n\n📝 DÉVELOPPEMENT — chaque partie :\n• Titre implicite (dans ta tête, pas écrit).\n• Sous-parties : idée + citation courte + ANALYSE du procédé littéraire utilisé.\n• La clé : ne dis pas QUOI mais COMMENT et POURQUOI l'auteur a choisi ce procédé.\nEx : 'L'auteur utilise une métaphore guerrière pour montrer la violence des sentiments.'\n• Transition entre les parties obligatoire.\n\n🏁 CONCLUSION :\n• Bilan de ton analyse (répond à la problématique).\n• Ouverture : comparaison avec une autre œuvre, un autre auteur, un contexte plus large.\n\n⚠️ ERREURS CLASSIQUES :\n• Paraphraser le texte (raconter ce qui se passe) → toujours analyser !\n• Citer trop long → citations courtes et précises.\n• Oublier les connecteurs entre les idées.\n\nDonne-moi le texte à analyser !"
+    ]},
+
+    // ── HISTOIRE GÉNÉRAL ──
+    { keys: ['aide moi en histoire','les dates','histoire de france','histoire du monde'], rep: [
+      "L'histoire, j'adore ça — c'est comme un gigantesque roman ! Sur quoi tu travailles ?\n\n🏛️ Antiquité (Grèce, Rome, Égypte) ?\n⚔️ Moyen Âge (féodalité, croisades, Jeanne d'Arc) ?\n🌍 Grandes découvertes et Renaissance ?\n👑 L'Ancien Régime et la Révolution française ?\n⚔️ Napoléon et le XIXe siècle ?\n💣 1ère et 2ème Guerres mondiales ?\n❄️ Guerre froide ?\n🌐 Le monde contemporain ?\n\nDis-moi le chapitre précis !"
+    ]},
+
+    // ── REVOLUTION FRANÇAISE ──
+    { keys: ['revolution francaise','1789','bastille','louis xvi','marie antoinette','terreur','droits de l homme'], rep: [
+      "La Révolution française (1789-1799) — cours complet :\n\n📅 CAUSES :\n• Crise financière : la France est ruinée par les guerres (notamment la Guerre d'Indépendance américaine).\n• Inégalités sociales : 3 ordres — clergé (1%) et noblesse (2%) ne paient pas d'impôts. Le tiers-état (97%) paye tout.\n• Idées des Lumières : Voltaire, Rousseau, Montesquieu remettent en cause la monarchie absolue.\n• Crise alimentaire : mauvaises récoltes, le pain est hors de prix.\n\n🔑 CHRONOLOGIE ESSENTIELLE :\n• Mai 1789 : États généraux → tiers-état forme l'Assemblée nationale.\n• 14 juillet 1789 : prise de la Bastille (symbole de la liberté).\n• 26 août 1789 : Déclaration des droits de l'Homme et du citoyen.\n• 1791 : monarchie constitutionnelle.\n• 1792 : guerre contre l'Europe, proclamation de la République.\n• 21 janvier 1793 : exécution de Louis XVI.\n• 1793-94 : la Terreur — Robespierre guillotine les opposants.\n• 27 juillet 1794 : chute de Robespierre (Thermidor).\n• 9 novembre 1799 : coup d'État de Napoléon Bonaparte.\n\n💡 IDÉES CLÉS : liberté, égalité, fraternité — toujours notre devise nationale !"
+    ]},
+
+    // ── NAPOLEON ──
+    { keys: ['napoleon','empire','waterloo','austerlitz','code civil','napoleon bonaparte'], rep: [
+      "Napoléon Bonaparte — l'essentiel :\n\n👑 ASCENSION :\n• Né en Corse en 1769. Général brillant pendant la Révolution.\n• Coup d'État du 18 Brumaire (9 nov. 1799) → devient 1er Consul.\n• 1804 : se couronne Empereur des Français à Notre-Dame.\n\n⚔️ LES GRANDES VICTOIRES :\n• Marengo (1800), Austerlitz (1805) — 'le soleil d'Austerlitz'.\n• À son apogée, contrôle presque toute l'Europe.\n\n📜 SON HÉRITAGE :\n• Code civil (1804) : base de notre droit encore aujourd'hui.\n• Lycées, Légion d'honneur, Banque de France, préfets.\n• Baccalauréat créé en 1808 !\n\n💥 LA CHUTE :\n• Désastre de la campagne de Russie (1812) : 600 000 soldats partent, 100 000 rentrent.\n• Défaite de Leipzig (1813) → exil à l'île d'Elbe.\n• Les Cent-Jours (1815) → défaite définitive à Waterloo.\n• Exil à Sainte-Hélène → mort en 1821."
+    ]},
+
+    // ── GUERRES MONDIALES ──
+    { keys: ['premiere guerre mondiale','ww1','1914','guerre 14','grande guerre','deuxieme guerre mondiale','ww2','1939','seconde guerre','shoah','debarquement'], rep: [
+      "Les deux guerres mondiales :\n\n🌍 1ère GUERRE MONDIALE (1914-1918) :\n• Étincelle : assassinat de l'archiduc François-Ferdinand à Sarajevo (28 juin 1914).\n• Causes profondes : rivalités impérialistes, course aux armements, alliances militaires.\n• Camps : Triple Entente (France, Russie, Royaume-Uni) vs Triplice (Allemagne, Autriche-Hongrie).\n• La guerre des tranchées : conditions inhumaines, gaz de combat, 10 millions de morts militaires.\n• Batailles clés : Verdun (1916) — 700 000 morts, la Marne, la Somme.\n• Fin : armistice du 11 novembre 1918 (à 11h11), Traité de Versailles (1919).\n\n🌍 2ème GUERRE MONDIALE (1939-1945) :\n• Hitler envahit la Pologne → 1er sept. 1939 → déclaration de guerre franco-britannique.\n• Juin 1940 : France vaincue, armistice, régime de Vichy (Pétain), De Gaulle à Londres.\n• La Résistance en France : Jean Moulin, maquis, réseaux secrets.\n• Shoah : 6 millions de Juifs exterminés dans les camps (Auschwitz, Treblinka...).\n• 6 juin 1944 : Débarquement en Normandie (Overlord) — tournant décisif.\n• 8 mai 1945 : capitulation allemande (Victoire en Europe).\n• Bombes atomiques sur Hiroshima et Nagasaki → 2 sept. 1945 : fin totale."
+    ]},
+
+    // ── GUERRE FROIDE ──
+    { keys: ['guerre froide','urss','usa','bloc','communisme','capitalisme','mur de berlin','cuba','course aux armements'], rep: [
+      "La Guerre froide (1947-1991) — cours complet :\n\n🌍 CONTEXTE :\nAprès 1945, deux superpuissances s'affrontent indirectement : les USA (capitalisme, démocratie libérale) et l'URSS (communisme, parti unique).\n\n⚡ LES GRANDES CRISES :\n• 1947 : doctrine Truman (endiguement du communisme), Plan Marshall.\n• 1948-49 : blocus de Berlin par l'URSS → pont aérien américain.\n• 1950-53 : guerre de Corée (Nord communiste vs Sud pro-américain).\n• 1961 : construction du Mur de Berlin (symbole de la division du monde).\n• 1962 : crise des missiles de Cuba — le monde au bord de la guerre nucléaire pendant 13 jours.\n• 1965-75 : guerre du Vietnam.\n• 1957-69 : course à l'espace (Spoutnik, Youri Gagarine, Lune).\n\n🔫 LA COURSE AUX ARMEMENTS :\nLes deux pays accumulent des milliers d'armes nucléaires — la 'dissuasion mutuelle'.\n\n🏁 FIN :\n• Mikhaïl Gorbatchev : glasnost (transparence) et perestroïka (restructuration).\n• 9 novembre 1989 : chute du Mur de Berlin (image mondiale).\n• 25 décembre 1991 : dissolution de l'URSS → 15 nouveaux pays indépendants."
+    ]},
+
+    // ── SVT GÉNÉRAL ──
+    { keys: ['aide moi en svt','svt','sciences de la vie','biologie','sciences nat'], rep: [
+      "Les SVT, c'est fascinant — on parle du vivant, de toi, de la planète ! Sur quoi tu travailles ?\n\n🔬 La cellule et l'ADN / génétique ?\n🌱 La photosynthèse et nutrition des plantes ?\n🧬 La reproduction et hérédité ?\n🌍 Les écosystèmes et biodiversité ?\n🦴 Le corps humain (digestion, respiration, circulation, immunité) ?\n🐟 L'évolution des espèces ?\n🦠 Les microorganismes et maladies ?\n🌡️ Le changement climatique ?\n\nDis-moi le chapitre !"
+    ]},
+
+    // ── PHOTOSYNTHESE ──
+    { keys: ['photosynthese','chlorophylle','chloroplaste','nutrition plantes'], rep: [
+      "La photosynthèse — cours complet :\n\n🌱 DÉFINITION : processus par lequel les plantes fabriquent leur propre matière organique en utilisant la lumière solaire.\n\n📝 ÉQUATION BILAN :\n6CO₂ + 6H₂O + lumière → C₆H₁₂O₆ (glucose) + 6O₂\n(dioxyde de carbone + eau + lumière → sucre + oxygène)\n\n🔬 OÙ ÇA SE PASSE :\n• Dans les chloroplastes, organites des cellules végétales.\n• Contiennent la chlorophylle (pigment vert) qui capte la lumière.\n• Principalement dans les feuilles (mais aussi tiges vertes).\n\n🔑 CONDITIONS NÉCESSAIRES :\n• Lumière (soleil ou artificielle)\n• CO₂ (absorbé par les stomates = pores des feuilles)\n• Eau (absorbée par les racines)\n\n💡 IMPORTANCE :\n• Produit de l'O₂ → base de la vie sur Terre.\n• Capte le CO₂ → rôle crucial contre le réchauffement.\n• Base de toutes les chaînes alimentaires.\n\n🌙 LA NUIT : les plantes font la RESPIRATION (consomment du glucose + O₂, rejettent CO₂) — comme nous !"
+    ]},
+
+    // ── ADN GÉNÉTIQUE ──
+    { keys: ['adn','genetique','heredite','gene','chromosome','mutation','clonage','allele'], rep: [
+      "L'ADN et la génétique — cours complet :\n\n🧬 L'ADN :\n• = Acide DésoxyriboNucléique\n• Présent dans le noyau de CHAQUE cellule (sauf globules rouges).\n• Structure en double hélice (Watson & Crick, 1953).\n• Composé de 4 bases : Adénine (A), Thymine (T), Guanine (G), Cytosine (C).\n• A s'apparie toujours avec T, G avec C.\n\n🔬 ORGANISATION :\nADN → gènes → chromosomes → noyau\n• Humain : 46 chromosomes (23 paires) dans chaque cellule.\n• La 23ème paire détermine le sexe : XX = femme, XY = homme.\n\n👨‍👩‍👦 HÉRÉDITÉ :\n• On hérite de 23 chromosomes de chaque parent = 46 au total.\n• Gène DOMINANT : s'exprime même présent en un seul exemplaire.\n• Gène RÉCESSIF : ne s'exprime que si présent en DEUX exemplaires.\nEx : yeux marrons (dominant) > yeux bleus (récessif).\n\n⚠️ MUTATION :\n= modification accidentelle de la séquence d'ADN.\nPeut être neutre, bénéfique (évolution) ou nocive (certains cancers).\nCauses : rayons UV, tabac, erreurs de copie...\n\n🔬 APPLICATIONS : médecine (dépistage génétique), criminologie (tests ADN), généalogie."
+    ]},
+
+    // ── CORPS HUMAIN ──
+    { keys: ['digestion','respiration','circulation','systeme nerveux','corps humain','organe','coeur','poumon','immunite','systeme immunitaire'], rep: [
+      "Le corps humain — les grands systèmes :\n\n❤️ SYSTÈME CIRCULATOIRE :\n• Le cœur pompe ~70 fois/min, ~100 000 fois/jour.\n• Circulation : cœur → artères (sang oxygéné) → capillaires → veines (sang désoxygéné) → cœur → poumons → cœur.\n• Globules rouges transportent l'O₂ grâce à l'hémoglobine.\n\n🫁 SYSTÈME RESPIRATOIRE :\n• Inspiration : O₂ entre dans les poumons → alvéoles → sang.\n• Expiration : CO₂ sort du sang → alvéoles → air.\n• On a ~300 millions d'alvéoles pulmonaires !\n\n🍎 SYSTÈME DIGESTIF :\nBouche (mastication + salive) → œsophage → estomac (suc gastrique acide) → intestin grêle (absorption des nutriments avec les villosités) → côlon (absorption eau) → rectum → anus.\nDurée : 24 à 72 heures !\n\n🧠 SYSTÈME NERVEUX :\n• Cerveau (100 milliards de neurones !) + moelle épinière = SNC.\n• Nerfs = SNP (relie cerveau et organes).\n• Réflexe = réponse automatique sans passer par le cerveau.\n\n🛡️ SYSTÈME IMMUNITAIRE :\n• 1ère ligne : peau, muqueuses.\n• 2ème ligne : globules blancs (phagocytes = 'mangent' les microbes).\n• 3ème ligne : lymphocytes B (anticorps) et T (détruisent cellules infectées).\n• Vaccination : introduit un antigène inoffensif → mémoire immunitaire."
+    ]},
+
+    // ── PHYSIQUE-CHIMIE GÉNÉRAL ──
+    { keys: ['aide moi en physique','physique chimie','physique'], rep: [
+      "Physique-Chimie ! C'est la matière qui explique comment le monde fonctionne vraiment. Sur quoi tu travailles ?\n\n⚡ Électricité (circuits, loi d'Ohm, puissance) ?\n🏃 Mécanique (vitesse, forces, mouvements) ?\n💡 Optique (lumière, lentilles, couleurs) ?\n⚗️ Chimie (atomes, réactions, pH) ?\n🌡️ Énergie et thermodynamique ?\n🌊 Ondes et son ?\n\nDonne-moi le chapitre !"
+    ]},
+
+    // ── ÉLECTRICITÉ ──
+    { keys: ['electricite','circuit','tension','intensite','resistance','loi d ohm','volt','ampere','puissance electrique'], rep: [
+      "Électricité — cours complet :\n\n⚡ LOI D'OHM : U = R × I\n• U = tension (Volts, V) — mesurée avec un voltmètre en dérivation\n• R = résistance (Ohms, Ω)\n• I = intensité (Ampères, A) — mesurée avec un ampèremètre en série\n\n⚡ CIRCUITS :\n🔵 Série : les dipôles se suivent.\n→ Même intensité partout : I₁ = I₂ = I\n→ Les tensions s'additionnent : U = U₁ + U₂\n→ Résistance totale : R = R₁ + R₂\n\n🔴 Parallèle : les dipôles sont en branches.\n→ Même tension pour chaque branche.\n→ Les intensités s'additionnent : I = I₁ + I₂\n→ 1/R = 1/R₁ + 1/R₂\n\n⚡ PUISSANCE : P = U × I (Watts, W)\n⚡ ÉNERGIE : E = P × t (Joules) ou E = P × t / 3 600 000 (kWh)\n⚡ EFFET JOULE : P = R × I² (la résistance chauffe)\n\n🔋 GÉNÉRATEURS : fournissent l'énergie (pile, batterie, panneau solaire)\n\nDonne-moi ton circuit !"
+    ]},
+
+    // ── VITESSE ──
+    { keys: ['vitesse','calculer la vitesse','formule vitesse','distance temps','mouvement'], rep: [
+      "Mécanique — vitesse et mouvement :\n\n🏃 FORMULE FONDAMENTALE :\nv = d / t\n• v = vitesse (m/s ou km/h)\n• d = distance (m ou km)\n• t = temps (s ou h)\n\nDérivées : d = v × t | t = d / v\n\n🔄 CONVERSIONS :\n• km/h → m/s : diviser par 3,6\n• m/s → km/h : multiplier par 3,6\nEx : 90 km/h = 90/3,6 = 25 m/s\n\n📊 TYPES DE MOUVEMENT :\n• Uniforme : vitesse constante, trajectoire droite.\n• Accéléré : vitesse augmente (accélération a > 0).\n• Décéléré : vitesse diminue (a < 0).\n\n📐 ACCÉLÉRATION : a = (v_finale - v_initiale) / t (m/s²)\n\n📐 DISTANCE AVEC ACCÉLÉRATION : d = v₀t + (1/2)at²\n\n🚗 EXEMPLE : voiture à 90 km/h pendant 2h30 ?\nd = 90 × 2,5 = 225 km\n\nDonne-moi ton exercice !"
+    ]},
+
+    // ── OPTIQUE ──
+    { keys: ['optique','lumiere','lentille','miroir','refraction','spectre','arc en ciel','couleurs'], rep: [
+      "Optique — les bases :\n\n💡 PROPAGATION DE LA LUMIÈRE :\n• Se propage en ligne droite dans un milieu homogène.\n• Vitesse : 300 000 km/s dans le vide (la vitesse maximale de l'univers !).\n\n🌈 LES COULEURS :\n• Lumière blanche = mélange de toutes les couleurs (ROYGBIV : rouge, orange, jaune, vert, bleu, indigo, violet).\n• Prisme ou gouttes d'eau → décomposition = spectre visible.\n• Un objet rouge absorbe toutes les couleurs sauf le rouge qu'il réfléchit.\n\n🔍 RÉFLEXION ET RÉFRACTION :\n• Réflexion : angle d'incidence = angle de réflexion.\n• Réfraction : la lumière change de direction en changeant de milieu.\nEx : un crayon dans l'eau semble 'cassé'.\n\n🔭 LENTILLES :\n• Convergente (convexe) : fait converger les rayons → loupe, lunettes pour hypermétropes.\n• Divergente (concave) : fait diverger les rayons → lunettes pour myopes.\n• Distance focale f' : distance entre le centre et le foyer.\n\nDonne-moi ton exercice !"
+    ]},
+
+    // ── CHIMIE ATOMES ──
+    { keys: ['atome','molecule','element chimique','tableau periodique','ion','liaison','reaction chimique','acide','base','ph'], rep: [
+      "Chimie — cours complet :\n\n⚛️ L'ATOME :\n• Noyau : protons (+) + neutrons (neutres) → charge positive.\n• Électrons (-) sur des couches autour du noyau.\n• Nombre de protons = numéro atomique (Z).\n• Atome neutre : autant de protons que d'électrons.\n\n🔗 IONS :\n• Cation (+) : l'atome perd des électrons (ex : Na⁺, Ca²⁺).\n• Anion (-) : l'atome gagne des électrons (ex : Cl⁻, O²⁻).\n\n🧪 MOLÉCULES ET FORMULES :\n• H₂O : 2 H + 1 O (eau)\n• CO₂ : 1 C + 2 O (dioxyde de carbone)\n• NaCl : 1 Na + 1 Cl (sel de table)\n• C₆H₁₂O₆ : glucose\n\n⚗️ RÉACTIONS CHIMIQUES :\n• Les atomes se réorganisent mais ne disparaissent pas (conservation de la matière).\n• Équilibrage : même nombre d'atomes de chaque côté.\nEx : 2H₂ + O₂ → 2H₂O\n\n🧪 pH :\n• 0-7 : acide (pH 0 = très acide)\n• 7 : neutre (eau pure)\n• 7-14 : basique/alcalin (pH 14 = très basique)\n\nDonne-moi ton exercice !"
+    ]},
+
+    // ── ANGLAIS ──
+    { keys: ['anglais','english','traduction','traduire','verbes irreguliers','present perfect','preterit','futur anglais','grammaire anglaise'], rep: [
+      "L'anglais — cours complet :\n\n📚 LES TEMPS ESSENTIELS :\n\n• Present Simple (habitude/vérité) : I work. She works.\n'Do/Does' pour les questions et négations : Do you work? She doesn't work.\n\n• Present Continuous (action en cours) : I am working. She is sleeping.\nFormé avec BE + V-ing.\n\n• Preterit Simple (passé terminé) : I worked. She went. (verbes irréguliers !)\n'Did' pour questions/négations : Did you go? I didn't go.\n\n• Present Perfect (passé avec lien au présent) : I have worked. She has gone.\nFormé avec HAVE/HAS + participe passé.\nMots clés : already, yet, just, ever, never, since, for.\n\n• Future Will (décision spontanée) : I will help you.\n• Future Going to (plan prévu) : I'm going to study.\n\n🔑 VERBES IRRÉGULIERS INDISPENSABLES :\ngo/went/gone • come/came/come • do/did/done • have/had/had\nsee/saw/seen • take/took/taken • give/gave/given • know/knew/known\nwrite/wrote/written • speak/spoke/spoken • buy/bought/bought\n\n💬 Donne-moi ta phrase ou ton exercice !"
+    ]},
+
+    // ── ESPAGNOL ──
+    { keys: ['espagnol','espanol','conjugaison espagnol','traduire en espagnol','ser estar'], rep: [
+      "L'espagnol — cours complet :\n\n🇪🇸 PRÉSENT DE L'INDICATIF :\n\nVerbes en -AR (hablar = parler) :\nyo hablo / tú hablas / él habla / nosotros hablamos / vosotros habláis / ellos hablan\n\nVerbes en -ER (comer = manger) :\nyo como / tú comes / él come / nosotros comemos / vosotros coméis / ellos comen\n\nVerbes en -IR (vivir = vivre) :\nyo vivo / tú vives / él vive / nosotros vivimos / vosotros vivís / ellos viven\n\n🔑 VERBES IRRÉGULIERS ESSENTIELS :\nSER (être permanent) : soy, eres, es, somos, sois, son\nESTAR (être temporaire/position) : estoy, estás, está, estamos, estáis, están\nTENER (avoir) : tengo, tienes, tiene, tenemos, tenéis, tienen\nIR (aller) : voy, vas, va, vamos, vais, van\nPODER (pouvoir) : puedo, puedes, puede, podemos, podéis, pueden\n\n💡 SER vs ESTAR :\n• SER : identité, origine, caractère permanent → Soy francés. Es médico.\n• ESTAR : état temporaire, lieu, sentiment → Estoy cansado. Estoy en Madrid.\n\nDonne-moi ton exercice !"
+    ]},
+
+    // ── ALLEMAND ──
+    { keys: ['allemand','deutsch','conjugaison allemand','traduire en allemand','cas allemand'], rep: [
+      "L'allemand — cours complet :\n\n🇩🇪 VERBES ESSENTIELS :\nSEIN (être) : ich bin / du bist / er ist / wir sind / ihr seid / sie sind\nHABEN (avoir) : ich habe / du hast / er hat / wir haben / ihr habt / sie haben\nWERDEN (devenir/futur) : ich werde / du wirst / er wird / wir werden / ihr werdet / sie werden\n\n🔤 LES ARTICLES :\nDéfinis : der (masc.) / die (fém.) / das (neutre) / die (plur.)\nIndéfinis : ein / eine / ein / (pas d'article)\n\n📚 LES 4 CAS :\n• Nominatif : sujet du verbe → Der Mann kommt.\n• Accusatif : COD → Ich sehe den Mann.\n• Datif : COI / après certaines prépositions → Ich helfe dem Mann.\n• Génitif : possession → Das Auto des Mannes.\n\n💡 PRÉPOSITIONS + CAS :\nToujours accusatif : durch, für, gegen, ohne, um\nToujours datif : aus, bei, mit, nach, seit, von, zu\nAccusatif ou datif (mouvement vs position) : in, an, auf, über, unter...\n\n🗣️ VOCABULAIRE UTILE :\nbitte (s'il vous plaît) / danke (merci) / entschuldigung (pardon) / wie viel (combien) / wo (où) / wann (quand) / warum (pourquoi)\n\nDonne-moi ton exercice !"
+    ]},
+
+    // ── LATIN ──
+    { keys: ['latin','traduction latin','conjugaison latin','version latin','rosa','amare'], rep: [
+      "Le latin — les bases :\n\n📜 LES DÉCLINAISONS (5 groupes selon la terminaison) :\nLa 1ère déclinaison (-a) : rosa (la rose)\nNom. rosa / Gén. rosae / Dat. rosae / Acc. rosam / Abl. rosā\nPluriel : rosae / rosarum / rosis / rosas / rosis\n\n📜 CONJUGAISON (exemple amare = aimer) :\nPrésent actif : amo, amas, amat, amamus, amatis, amant\nImparfait : amabam, amabas, amabat...\nFutur : amabo, amabis, amabit...\n\n📜 VERBE ESSE (être) :\nsum, es, est, sumus, estis, sunt\n\n💡 POUR TRADUIRE :\n1. Repère le verbe (en fin de phrase souvent).\n2. Trouve le sujet (nominatif).\n3. Trouve le COD (accusatif).\n4. Traduis les autres compléments.\n\nDonne-moi ta phrase à traduire !"
+    ]},
+
+    // ── MÉMORISER ──
+    { keys: ['memoriser','retenir','apprendre par coeur','mnemonique','memory','apprendre vite'], rep: [
+      "Techniques de mémorisation scientifiquement prouvées :\n\n🔁 1. RÉPÉTITION ESPACÉE :\nRévise à J+1, J+3, J+7, J+14, J+30. Chaque révision renforce la trace mémorielle. C'est 10x plus efficace que de tout réviser en une fois.\n\n✍️ 2. ÉCRIRE À LA MAIN :\nL'écriture manuelle active plus de zones du cerveau que la frappe. Prendre des notes à la main = mémorisation 40% meilleure.\n\n🗣️ 3. LA MÉTHODE FEYNMAN :\nEssaie d'expliquer ce que tu viens d'apprendre comme si tu l'enseignais à quelqu'un de 10 ans. Si tu bloques, c'est là que tu n'as pas compris.\n\n🧠 4. LES MNÉMOTECHNIQUES :\nCrée des phrases ou des acronymes.\nEx : 'Mon Vieux Tu M'As Guéri De' → planètes dans l'ordre (Mercure, Vénus, Terre, Mars, Astéroïdes, Géante(Jupiter), Dernière(Saturne)...\n\n🎭 5. LE PALAIS DE LA MÉMOIRE :\nAssocie chaque info à un lieu que tu connais bien (ta maison). 'Déplace-toi mentalement' pour retrouver les infos.\n\n😴 6. DORMIR APRÈS RÉVISION :\nLe sommeil consolide les souvenirs dans la mémoire à long terme. Révise le soir, dors bien, et le lendemain tu te souviens mieux !\n\n🎵 7. TRANSFORMER EN CHANSON ou en rime : le cerveau retient 70% mieux ce qui est mis en musique."
+    ]},
+
+    // ── STRESS EXAMENS ──
+    { keys: ['stress','stresse','angoisse','peur du controle','trac','examen','controle demain','interro demain','brevet','bac','panique'], rep: [
+      "Gestion du stress avant un contrôle — guide complet :\n\n😮‍💨 TECHNIQUE DE RESPIRATION 4-7-8 :\nInspire par le nez (4 sec) → bloque (7 sec) → expire lentement par la bouche (8 sec).\nFaire 3-4 fois. Ça active le système nerveux parasympathique = calme instantané.\n\n📋 LA VEILLE DU CONTRÔLE :\n• Révision légère (revoir ses fiches, pas de nouveaux chapitres).\n• Prépare tout la veille : trousse, carte d'identité, règle...\n• Dîner normal, pas d'excès.\n• Couche-toi à heure normale — pas plus tard que d'habitude.\n\n🌅 LE MATIN :\n• Petit déjeuner : sucres lents (pain, céréales) + protéines (œuf, yaourt).\n• Pas de révision intensive — ça augmente le stress sans aider.\n• Arrive un peu en avance pour t'installer tranquillement.\n\n📝 PENDANT LE CONTRÔLE :\n1. Lis tout le sujet avant de commencer.\n2. Commence par les questions que tu maîtrises — ça te met en confiance.\n3. Note le temps disponible et répartis-le par section.\n4. Si tu bloques : passe à la suite, reviens après.\n5. Relis si le temps le permet.\n\n💪 RAPPELLE-TOI :\nUn contrôle n'est jamais la fin du monde. Même les meilleurs élèves ratent des contrôles parfois. Ce qui compte c'est la progression sur le long terme."
+    ]},
+
+    // ── ORGANISATION ──
+    { keys: ['organisation','agenda','planning','emploi du temps','gerer mon temps','procrastination','flemme','j arrive pas a travailler'], rep: [
+      "L'organisation scolaire — guide complet :\n\n📅 SYSTÈME AGENDA :\n• Note IMMÉDIATEMENT tout devoir dès que le prof le donne.\n• Marque les contrôles avec une couleur différente.\n• La veille de chaque journée, consulte ton agenda.\n\n🍅 TECHNIQUE POMODORO :\n25 min de travail intense (téléphone hors de portée) → 5 min de pause.\nAprès 4 cycles → 20-30 min de grande pause.\nPourquoi ça marche : ton cerveau reste concentré sur des sprints courts.\n\n📋 LA LISTE DU SOIR :\nAvant de dormir, écris les 3 tâches PRIORITAIRES du lendemain.\nPas plus de 3 — ça évite l'écrasement par une liste infinie.\n\n🐸 'EAT THE FROG' :\nCommence toujours par la tâche la plus dure/chiante.\nQuand c'est fait, le reste semble facile. Et tu as toute l'énergie du début de session.\n\n🚫 VAINCRE LA PROCRASTINATION :\n• La règle des 2 minutes : si ça prend moins de 2 min → fais-le MAINTENANT.\n• Décompose les gros devoirs en micro-étapes : 'rédiger l'intro' pas 'faire la dissert'.\n• Dis-toi : 'juste 10 minutes'. Souvent, une fois lancé t'arrêtes plus.\n• Retire les distractions : téléphone dans une autre pièce, pas de musique avec paroles.\n\n🎁 LES RÉCOMPENSES :\nAccorde-toi une récompense après chaque session de travail. Ça crée une association positive avec le travail !"
+    ]},
+
+    // ── JEUX VIDEO ──
+    { keys: ['jeux video','minecraft','fortnite','gaming','gamer','ps5','xbox','nintendo','league of legends','valorant','cod','rocket league','fifa'], rep: [
+      "Les jeux vidéo, j'adore ce sujet ! T'es plutôt quel style ?\n\n🎮 Battle royale (Fortnite, Warzone) ? Open world (Minecraft, GTA, Elden Ring) ? FPS compétitif (Valorant, CS2) ? RPG (Zelda, Pokémon, Final Fantasy) ? Sport (FIFA, Rocket League) ?\n\nMinecraft c'est un truc de ouf — jeu le plus vendu de l'histoire avec 238 millions de copies ! Et Fortnite a quand même réinventé tout le battle royale...\n\nT'es sur quelle plateforme ? PS5, PC, Switch ? Tu joues plutôt solo ou avec des amis ?",
+      "Gaming ! On peut en parler des heures. T'as des jeux favoris en ce moment ? Moi je trouve fascinant comment les jeux vidéo sont devenus une vraie forme d'art — les scénarios, les musiques, les graphismes... C'est quoi le dernier jeu qui t'a vraiment accroché ?"
+    ]},
+
+    // ── MUSIQUE ──
+    { keys: ['musique','chanson','rap','pop','rock','playlist','spotify','ecouter','hip hop','rnb','metal','jazz','classique'], rep: [
+      "La musique c'est la vie ! T'es plutôt quel genre ?\n\nRap/Hip-hop, Pop, Rock, Metal, R&B, Jazz, Électro, K-pop, Classique... Chaque genre a ses codes et son histoire.\n\nFun fact : écouter de la musique pendant les révisions peut aider, mais uniquement de la musique SANS paroles (instrumentale, lo-fi, classique) — les paroles activent la zone du langage et perturbent la lecture/écriture.\n\nT'as un artiste préféré en ce moment ? Et t'es plutôt casque ou enceinte quand tu écoutes ?",
+      "La musique c'est incroyable ! Des études montrent que certains rythmes synchronisent les ondes cérébrales et aident à la concentration. T'écoutes quoi en ce moment ? Et tu pratiques un instrument ou c'est plutôt écoute pure ?"
+    ]},
+
+    // ── SPORT ──
+    { keys: ['sport','football','foot','basket','tennis','natation','athletisme','gym','rugby','handball','volley'], rep: [
+      "Le sport c'est vraiment important, et pas juste pour la forme physique ! L'exercice régulier :\n• Augmente la concentration de 20%\n• Réduit le cortisol (hormone du stress)\n• Améliore la mémoire (neuroplasticité)\n• Libère des endorphines → humeur au top\n\nMême 30 min de marche rapide par jour fait une vraie différence pour les études !\n\nT'es plutôt quel sport ? Tu pratiques dans un club ou pour le fun ? T'as des compétitions ?",
+      "Le sport c'est un des meilleurs amis des bonnes notes, sérieusement. Après un match ou une séance de sport, le cerveau est bien plus efficace pour apprendre. T'es dans une équipe ou tu pratiques solo ? C'est quoi ton sport ?"
+    ]},
+
+    // ── FILMS / SÉRIES ──
+    { keys: ['film','films','serie','series','netflix','cinema','regarder','disney','anime','manga','marvel','dc'], rep: [
+      "Cinéma et séries ! T'as des genres préférés ? Action, thriller, comédie, fantastique, sci-fi, horreur, drama, anime ?\n\nLes animes notamment c'est devenu énorme — Demon Slayer, Jujutsu Kaisen, Attack on Titan... Des œuvres avec des scénarios incroyables.\n\nEt côté films, Marvel a quand même transformé Hollywood avec son univers cinématographique. T'as vu des trucs récents qui t'ont marqué ?",
+      "Films et séries ! C'est une super façon de se cultiver en se détendant. T'es plutôt Netflix, Disney+, autre ? Et t'as des genres favoris ? Je suis curieux de savoir ce qui te plaît !"
+    ]},
+
+    // ── BLAGUES ──
+    { keys: ['blague','raconte moi une blague','fais moi rire','humour','drole','joke'], rep: [
+      "Pourquoi les plongeurs plongent-ils toujours en arrière et jamais en avant ? Parce que sinon ils tomberaient dans le bateau ! 😄",
+      "Un homme entre dans une bibliothèque et dit : 'Un steak-frites s'il vous plaît !' La bibliothécaire répond : 'Chhhut, vous êtes dans une bibliothèque !' L'homme chuchote alors : 'Pardon... un steak-frites s'il vous plaît.' 😂",
+      "Quel est le comble pour un électricien ? Ne pas savoir quoi dire à courant ! ⚡",
+      "Un mathématicien et un physicien regardent une maison. Deux personnes entrent, puis trois ressortent. Le physicien : 'Mesure erronée.' Le mathématicien : 'Si une personne rentre maintenant, la maison sera vide.' 🤓",
+      "Qu'est-ce qu'un canif ? Un petit fien ! 😁",
+      "Pourquoi l'épouvantail a eu une médaille ? Parce qu'il était exceptionnel dans son domaine ! 🌾",
+      "Comment appelle-t-on un chat tombé dans un pot de peinture le jour de Noël ? Un chat-peint de Noël ! 🎄"
+    ]},
+
+    // ── HEURE MÉTÉO ──
+    { keys: ['heure','quelle heure','meteo','temps qu il fait'], rep: [
+      "Je suis 100% offline, donc pas d'accès à l'heure ni à la météo en temps réel — ton téléphone te répondra bien plus vite pour ça 😄 ! Par contre pour tout ce qui est scolaire ou discussion, je suis là !"
+    ]},
+
+    // ── MERCI ──
+    { keys: ['merci','thanks','c est cool','super','genial','nickel','parfait','t es le meilleur','chapeau','trop bien','incroyable'], rep: [
+      "Avec grand plaisir ! C'est vraiment fait pour ça. N'hésite pas à revenir dès que t'as une question ou envie de discuter !",
+      "De rien ! C'est un plaisir de t'aider. T'as d'autres questions sur lesquelles je peux t'aider ?",
+      "Super content que ça t'ait aidé ! Continue comme ça, tu vas assurer 💪",
+      "Merci à toi ! C'est motivant de pouvoir aider. Bon courage pour la suite !"
+    ]},
+
+    // ── AU REVOIR ──
+    { keys: ['au revoir','bye','ciao','a plus','bonne nuit','bonne soiree','bonne journee','bientot','tchao','salut bye'], rep: [
+      "À bientôt ! Bonne continuation et bon courage pour tes devoirs. Tu vas gérer !",
+      "Ciao ! N'hésite pas à revenir si t'as besoin d'aide ou juste envie de discuter. Bonne journée !",
+      "À plus ! Tu vas assurer, j'en suis sûr. Bonne suite 💪",
+      "Bonne soirée/nuit ! Dors bien — le sommeil c'est essentiel pour mémoriser tout ce qu'on a vu aujourd'hui 😄"
+    ]}
+  ];
+
+  const defaultReplies = [
+    "Je n'ai pas de réponse toute faite pour ça, mais dis-m'en plus ! Si c'est pour un devoir, donne-moi le sujet précis, ta matière et ton niveau, et je fais de mon mieux pour t'aider.",
+    "Hmm, c'est une bonne question mais j'ai besoin de plus de contexte. Tu peux reformuler ou être plus précis ? Matière, exercice, niveau... et j'essaie de t'aider du mieux possible !",
+    "Intéressant ! Je ne suis pas sûr d'avoir tout compris. Donne-moi plus de détails — le chapitre, l'exercice, ou ce que tu cherches exactement — et je me lance.",
+    "Je vais être honnête : je n'ai pas assez d'infos sur ça dans ma base. Mais si tu me donnes le contexte exact, je fais de mon mieux ! Et pour les matières scolaires classiques, j'ai pas mal de ressources.",
+    "Bonne question ! Reformule un peu si tu peux — ou dis-moi la matière et le chapitre, et je t'aide directement avec ce que je sais."
+  ];
+
+  function paulRespond(msg) {
+    const m = msg.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    for (const entry of paulDB) {
+      if (entry.keys.some(k => m.includes(k.normalize("NFD").replace(/[\u0300-\u036f]/g, "")))) {
+        const reps = entry.rep;
+        return reps[Math.floor(Math.random() * reps.length)];
+      }
+    }
+    return defaultReplies[Math.floor(Math.random() * defaultReplies.length)];
+  }
+
+  // Paul AI UI
+  let paulOpen = false;
+  let paulGreeted = false;
+
+  function togglePaul(){
+    paulOpen = !paulOpen;
+    document.getElementById('paul-chat').classList.toggle('hidden', !paulOpen);
+    if(paulOpen && !paulGreeted){
+      paulGreeted = true;
+      addMsg('ai', "Salut ! Je suis Paul AI. Je peux t'aider avec tes devoirs dans toutes les matières, t'expliquer des notions de cours, te motiver, ou juste discuter de tout et de rien. Qu'est-ce qu'on fait ?");
+    }
+    if(paulOpen) setTimeout(() => document.getElementById('paul-input').focus(), 100);
+  }
+  function openPaul(){
+    if(!paulOpen) togglePaul();
+    toggleMenu();
+  }
+
+  function addMsg(role, text){
+    const div = document.getElementById('paul-messages');
+    const el = document.createElement('div');
+    el.className = `msg ${role}`;
+    el.innerHTML = text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    div.appendChild(el);
+    div.scrollTop = div.scrollHeight;
+    return el;
+  }
+
+  function sendSuggestion(text){
+    document.getElementById('paul-suggestions').style.display = 'none';
+    document.getElementById('paul-input').value = text;
+    sendMessage();
+  }
+
+  function sendMessage(){
+    const input = document.getElementById('paul-input');
+    const text = input.value.trim();
+    if(!text) return;
+    input.value = '';
+    document.getElementById('paul-suggestions').style.display = 'none';
+    addMsg('user', text);
+    setTimeout(() => {
+      addMsg('ai', paulRespond(text));
+    }, 300 + Math.random() * 500);
+  }
+
+  renderHome(); renderSettings();
+</script>
+</body>
+</html>
